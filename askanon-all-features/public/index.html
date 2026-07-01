@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AskAnon | Anonymous Class Questions</title>
+    <meta name="description" content="Anonymous live classroom Q&A with professor dashboard, presentation mode, sessions, reports, moderation, and exit tickets." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="/#/" aria-label="AskAnon home">
+        <span class="brand-mark">?</span>
+        <span>AskAnon</span>
+      </a>
+      <nav class="nav-actions">
+        <a class="ghost-button" href="/#/login">Professor login</a>
+        <a class="ghost-button" href="/#/join">Join class</a>
+        <a class="primary-button" href="/#/create">Create class</a>
+      </nav>
+    </header>
+
+    <main id="app" class="app-shell"></main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <template id="homeTemplate">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Anonymous classroom Q&A</p>
+          <h1>Questions students actually ask when they don’t have to raise their hand.</h1>
+          <p class="hero-subtitle">
+            Create a live board, share a class code or QR code, collect anonymous questions, answer them publicly, and export a clean report after class.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button large" href="/#/create">Create professor board</a>
+            <a class="secondary-button large" href="/#/join">Join with class code</a>
+          </div>
+          <div class="feature-strip">
+            <span>Live refresh</span><span>Presentation mode</span><span>Sessions</span><span>Exit tickets</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Example question board">
+          <div class="mini-window-bar"><span></span><span></span><span></span></div>
+          <div class="mini-question pinned">
+            <strong>12</strong>
+            <div><b>What is the difference between mitosis and meiosis?</b><small>Exam · Needs answer</small></div>
+          </div>
+          <div class="mini-question">
+            <strong>8</strong>
+            <div><b>Can we do one more example before the quiz?</b><small>Clarification · New</small></div>
+          </div>
+          <div class="mini-answer">Professor answer: Yes — we’ll do a practice problem next.</div>
+        </div>
+      </section>
+    </template>
+
+    <template id="createTemplate">
+      <section class="card narrow">
+        <p class="eyebrow">Professor setup</p>
+        <h1>Create a class board</h1>
+        <p class="muted">This creates a student join code and a private professor dashboard. Use a password you can remember.</p>
+        <form id="createForm" class="stacked-form">
+          <label>Class name<input name="title" required maxlength="120" placeholder="AP Biology Period 3" /></label>
+          <label>Course / section<input name="course" maxlength="120" placeholder="BIO 101, Wednesday lecture, etc." /></label>
+          <label>Professor / teacher name<input name="professorName" maxlength="120" placeholder="Mr. Smith" /></label>
+          <label>Professor password<input name="password" type="password" required minlength="6" placeholder="At least 6 characters" /></label>
+          <button class="primary-button large" type="submit">Create board</button>
+        </form>
+      </section>
+    </template>
+
+    <template id="joinTemplate">
+      <section class="card narrow">
+        <p class="eyebrow">Student access</p>
+        <h1>Join a class</h1>
+        <p class="muted">Enter the code your professor put on the board.</p>
+        <form id="joinForm" class="code-form">
+          <input name="joinCode" maxlength="10" autocomplete="off" placeholder="ABC123" aria-label="Class code" />
+          <button class="primary-button" type="submit">Join</button>
+        </form>
+      </section>
+    </template>
+
+    <template id="loginTemplate">
+      <section class="card narrow">
+        <p class="eyebrow">Professor access</p>
+        <h1>Log in to dashboard</h1>
+        <p class="muted">Use the class code and professor password you created.</p>
+        <form id="loginForm" class="stacked-form">
+          <label>Class code<input name="joinCode" maxlength="10" autocomplete="off" placeholder="ABC123" /></label>
+          <label>Password<input name="password" type="password" placeholder="Professor password" /></label>
+          <button class="primary-button large" type="submit">Open dashboard</button>
+        </form>
+      </section>
+    </template>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
