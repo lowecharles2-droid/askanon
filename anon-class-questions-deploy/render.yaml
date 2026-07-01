@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: askanon
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: APP_NAME
+        value: AskAnon
+      - key: DATA_DIR
+        value: /opt/render/project/src/data

@@ -1,0 +1,16 @@
+{
+  "classes": [
+    {
+      "id": "cls_b8adaaaa7488e295eb8b23d7",
+      "joinCode": "QG2674",
+      "title": "Test Class",
+      "courseCode": "BIO 101",
+      "school": "CCA",
+      "professorName": "Smith",
+      "professorToken": "prof_299f3ade1f702d163cbe75eb",
+      "createdAt": "2026-07-01T16:26:34.953Z"
+    }
+  ],
+  "questions": [],
+  "votes": []
+}
